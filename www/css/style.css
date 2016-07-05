@@ -1,12 +1,28 @@
 /* Empty. Add your own CSS if you like */
+.body{
+  font-family: 'Lato', sans-serif;
+}
+.dash{
+
+  background-color:#f1f2ef;
+}
+.subtext{
+  font-size: 18px;
+  font-weight: 300;
+  text-align:center;
+  padding-bottom:2%;
+}
 .interest{
   font-size: 25px;
+  font-weight: 400;
   text-align:center;
+
 }
 .count{
   margin-top: 45%;
-  font-size: 30px;
-  padding-bottom:5%;
+  font-weight: 500;
+  font-size: 45px;
+  padding-bottom:2%;
   text-align: center;
 }
 

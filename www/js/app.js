@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'backand'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 
 .run(function($ionicPlatform) {
@@ -18,17 +18,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       cordova.plugins.Keyboard.disableScroll(true);
 
     }
+
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
   });
 })
-    .config(function($stateProvider, $urlRouterProvider, BackandProvider) {
-
-    BackandProvider.setAppName('betterbanking');
-    BackandProvider.setSignUpToken('3d9ee35b-06ad-4804-a9f8-eb5fbaae7e2f');
-    BackandProvider.setAnonymousToken('ab5e8931-ba45-4ea4-ba18-0c1bedc2f15a');
+    .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
