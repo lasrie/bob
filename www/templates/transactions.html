@@ -4,10 +4,7 @@
 
     </ion-refresher>
     <ul class="list">
-      <a class="item item-icon-left" href="#/tab/transaction/1">
-        <i class="icon ion-email"></i>
-        Check mail
-      </a>
+      <a ng-repeat="item in transactions" class="item item-icon-left"ui-sref="tab.transaction-detail({{item.$$hashkey}})">{{item.recipient}} amount:{{item.amount}}</a>
     </ul>
   </ion-content>
 </ion-view>

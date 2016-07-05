@@ -9,7 +9,10 @@ angular.module('starter.services', [])
     var _konten = function () {
       return $http({
         method: 'GET',
-        url: 'https://bobp1942109941trial.hanatrial.ondemand.com/bob/AccountBalance?summarized=0'
+        url: 'https://bobp1942109941trial.hanatrial.ondemand.com/bob/AccountBalance?summarized=0',
+        headers:{
+          'Authorization':'asdasd'
+        }
       });
     };
 
@@ -42,6 +45,8 @@ angular.module('starter.services', [])
         return $http({
           method: 'GET',
           url: 'https://bobp1942109941trial.hanatrial.ondemand.com/bob/TransactionHistory'
+
+
         })
       },
       retrieveAccounts: function () {
