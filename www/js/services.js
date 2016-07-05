@@ -17,6 +17,62 @@ angular.module('starter.services', [])
 
   })
 
+  .factory('PouchStorage', function ($q) {
+    var db = new PouchDB('bank').then(function(response){
+      db = response;
+    });
+    return {
+      saveAccount: function (account) {
+        var deferred = $q.defer();
+        db.post(account).then(function (response) {
+          deferred.resolve(response);
+        }).catch(function (error) {
+          deferred.reject(error);
+        });
+        return deferred.promise;
+      },
+      saveAccounts: function (accounts) {
+        console.log(db);
+        console.log(accounts);
+        var deferred = $q.defer();
+        db.bulkDocs(accounts).then(function (response) {
+          deferred.resolve(response);
+        }).catch(function (error) {
+          deferred.reject(error);
+        });
+        return deferred.promise;
+
+      },
+      saveTransaction: function (transaction) {
+        var deferred = $q.defer();
+        db.post(account).then(function (response) {
+          deferred.resolve(response);
+        }).catch(function (error) {
+          deferred.reject(error);
+        });
+        return deferred.promise;
+      },
+      saveTransactions: function (transactions) {
+        var deferred = $q.defer();
+        db.bulkDocs(accounts).then(function (response) {
+          deferred.resolve(response);
+        }).catch(function (error) {
+          deferred.reject(error);
+        });
+        return deferred.promise;
+      },
+      allDocs: function(){
+        var deferred = $q.defer();
+        db.allDocs().then(function(response){
+          deferred.resolve(response);
+        }).catch(function (error) {
+          deferred.reject(error);
+        });
+        return deferred.promise;
+      }
+    }
+  })
+
   .factory('Chats', function () {
     // Might use a resource here that returns a JSON array
 
